@@ -3,13 +3,15 @@ package com.example.womensafety;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
 
 
 public class MainActivity extends AppCompatActivity {
-    public static boolean AccountExists = false;
+    public static boolean AccountExists;
     public static String userLady;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

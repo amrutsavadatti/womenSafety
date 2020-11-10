@@ -23,23 +23,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.463" />
 
-    <EditText
-        android:id="@+id/userPh"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:ems="10"
-        android:hint="Phone Number"
-        android:inputType="textPersonName"
-        android:textColor="#746cac"
-        android:textStyle="bold|italic"
-        app:layout_constraintBottom_toTopOf="@+id/goToEmer"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nameInput"
-        app:layout_constraintVertical_bias="0.229" />
-
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/goToEmer"
         android:layout_width="wrap_content"
@@ -53,5 +36,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:rippleColor="#332c6f"
         app:srcCompat="@android:drawable/ic_menu_send" />
+
+    <EditText
+        android:id="@+id/userPh"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Phone Number"
+        android:inputType="phone"
+        android:textColor="#746cac"
+        android:textStyle="bold|italic"
+        app:layout_constraintBottom_toTopOf="@+id/goToEmer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nameInput" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
