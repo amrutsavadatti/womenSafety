@@ -50,7 +50,14 @@ public class homePage extends AppCompatActivity {
 
                 if (MainActivity.userLady.equals("") || ph.equals("")){
                     Toast.makeText(homePage.this,"Add You Name And Phone Number to proceed",Toast.LENGTH_LONG).show();
-                }else{
+                }else if(BasePage.edit){
+                    Log.d("checkName", "onClick:"+MainActivity.userLady);
+                    Intent goToEmergency = new Intent(getApplicationContext(), BasePage.class);
+                    startActivity(goToEmergency);
+                    finish();
+                }
+
+                else{
                     Log.d("checkName", "onClick:"+MainActivity.userLady);
                     Intent goToEmergency = new Intent(getApplicationContext(), emergencyContacts.class);
                     startActivity(goToEmergency);
