@@ -34,17 +34,6 @@
         app:srcCompat="@android:drawable/ic_menu_edit" />
 
     <TextView
-        android:id="@+id/uName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="textView"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -70,51 +59,33 @@
         app:layout_constraintTop_toBottomOf="@+id/gotocont"
         app:layout_constraintVertical_bias="0.058" />
 
-    <TextView
-        android:id="@+id/indist"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="In Distress"
-        app:layout_constraintEnd_toEndOf="@+id/yousafe"
-        app:layout_constraintStart_toStartOf="@+id/yousafe"
-        app:layout_constraintTop_toBottomOf="@+id/yousafe" />
-
-    <TextView
-        android:id="@+id/vol"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:text="Tripple Press "
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/indist" />
-
-    <TextView
-        android:id="@+id/lowbut"
-        android:layout_width="109dp"
-        android:layout_height="22dp"
-        android:layout_marginTop="56dp"
-        android:layout_marginBottom="16dp"
-        android:text="Lower Vol Button"
-        app:layout_constraintBottom_toTopOf="@+id/uName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/vol" />
 
     <TextView
         android:id="@+id/yousafe"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="You are Safe!!!!"
-        app:layout_constraintBottom_toTopOf="@+id/uName"
+        android:layout_width="176dp"
+        android:layout_height="75dp"
+        android:text="You are Safe"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.483" />
+        app:layout_constraintVertical_bias="0.131" />
 
-
+    <TextView
+        android:id="@+id/uName2"
+        android:layout_width="165dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="52dp"
+        android:layout_marginBottom="424dp"
+        android:text="  In Distress   "
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.479"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/uName"
+        app:layout_constraintVertical_bias="0.0" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/SOS"
@@ -125,10 +96,36 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.583"
+        app:layout_constraintTop_toBottomOf="@+id/clickstar"
+        app:layout_constraintVertical_bias="0.149"
         app:srcCompat="@android:drawable/btn_star_big_on" />
 
+    <TextView
+        android:id="@+id/clickstar"
+        android:layout_width="241dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="23dp"
+        android:text="       Click Star"
+        android:textSize="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.441"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/uName2"
+        app:layout_constraintVertical_bias="0.061" />
+
+    <TextView
+        android:id="@+id/uName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="noName"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/yousafe"
+        app:layout_constraintVertical_bias="0.043" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
