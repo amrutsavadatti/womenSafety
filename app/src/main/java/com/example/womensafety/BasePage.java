@@ -18,7 +18,12 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.womensafety.data.MyDBHandler;
+import com.example.womensafety.model.Contacts;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class BasePage extends AppCompatActivity {
 
@@ -27,6 +32,7 @@ public class BasePage extends AppCompatActivity {
     public static Boolean edit = false;
     String longitudePublic;
     String latitudePublic;
+    private ArrayList<Contacts> contactsArrayList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,8 +61,12 @@ public class BasePage extends AppCompatActivity {
 
         Log.d("name_test", "name is " + name);
 
+        MyDBHandler db = new MyDBHandler(BasePage.this);
 
-        setContentView(R.layout.activity_base_page);
+        contactsArrayList = new ArrayList<>();
+
+
+
 
 
         FloatingActionButton gohome = findViewById(R.id.gotohomepg);
@@ -95,7 +105,16 @@ public class BasePage extends AppCompatActivity {
 
 
                 getLocation();
-                sendMsg(longitudePublic,latitudePublic);
+
+                // Get all contacts
+                List<Contacts> contactsList = db.getAllContacts();
+                for (Contacts c : contactsList){
+                    contactsArrayList.add(c);
+                    sendMsg(c.getPhoneNumber() ,longitudePublic,latitudePublic);
+
+                }
+
+
 
             }
 
@@ -116,11 +135,11 @@ public class BasePage extends AppCompatActivity {
         }
     }
 
-    public void sendMsg(String longitude,String latitude ) {
+    public void sendMsg(String number, String longitude,String latitude ) {
         Toast.makeText(BasePage.this, "sms sent", Toast.LENGTH_SHORT).show();
 
         String message = "Save Me!!! I'm at http://maps.google.com/?q=" + latitude + "," + longitude;
-        String number = "9869580141";
+//        String number = "9869580141";
         try{
             SmsManager smsManager = SmsManager.getDefault();
             smsManager.sendTextMessage(number, null, message, null, null);
