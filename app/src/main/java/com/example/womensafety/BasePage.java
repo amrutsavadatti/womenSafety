@@ -3,8 +3,7 @@ package com.example.womensafety;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
-//location imprts
-import androidx.core.content.ContextCompat;
+
 
 import android.Manifest;
 import android.content.SharedPreferences;
@@ -14,7 +13,7 @@ import android.content.Intent;
 import android.telephony.SmsManager;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
+
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -40,18 +39,10 @@ public class BasePage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_base_page);
 
-//        Asking for SMS permission
+//        Asking for SMS and GPS location permission
         ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.SEND_SMS, Manifest.permission.ACCESS_FINE_LOCATION}, PackageManager.PERMISSION_GRANTED);
 
-//        Getting inApp permission for location and internet
-//        try {
-//            if (ContextCompat.checkSelfPermission(getApplicationContext(), android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED ) {
-//                ActivityCompat.requestPermissions(this, new String[]{android.Manifest.permission.ACCESS_FINE_LOCATION}, 101);
-//
-//            }
-//        } catch (Exception e){
-//            e.printStackTrace();
-//        }
+
 
 
 
@@ -113,11 +104,7 @@ public class BasePage extends AppCompatActivity {
                 for (Contacts c : contactsList){
                     contactsArrayList.add(c);
                     sendMsg(c.getPhoneNumber() ,longitudePublic,latitudePublic);
-
                 }
-
-
-
             }
 
         });
@@ -141,8 +128,8 @@ public class BasePage extends AppCompatActivity {
     public void sendMsg(String number, String longitude,String latitude ) {
         Toast.makeText(BasePage.this, "sms sent", Toast.LENGTH_SHORT).show();
 
-        String message = "Save Me!!! I'm at http://maps.google.com/?q=" + latitude + "," + longitude;
-//        String number = "9869580141";
+        String message = "Save Me! I'm in Trouble , This is my location : http://maps.google.com/?q=" + latitude + "," + longitude;
+
         try{
             SmsManager smsManager = SmsManager.getDefault();
             smsManager.sendTextMessage(number, null, message, null, null);
