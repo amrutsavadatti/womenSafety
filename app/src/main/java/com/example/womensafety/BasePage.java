@@ -30,6 +30,7 @@ public class BasePage extends AppCompatActivity {
     private GpsTracker gpsTracker;
     private TextView userName;
     public static Boolean edit = false;
+    public static final int REQUEST_ID_MULTIPLE_PERMISSIONS = 1;
     String longitudePublic;
     String latitudePublic;
     private ArrayList<Contacts> contactsArrayList;
@@ -40,16 +41,17 @@ public class BasePage extends AppCompatActivity {
         setContentView(R.layout.activity_base_page);
 
 //        Asking for SMS permission
-        ActivityCompat.requestPermissions(BasePage.this,new String[]{Manifest.permission.SEND_SMS}, PackageManager.PERMISSION_GRANTED);
+        ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.SEND_SMS, Manifest.permission.ACCESS_FINE_LOCATION}, PackageManager.PERMISSION_GRANTED);
 
 //        Getting inApp permission for location and internet
-        try {
-            if (ContextCompat.checkSelfPermission(getApplicationContext(), android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED ) {
-                ActivityCompat.requestPermissions(this, new String[]{android.Manifest.permission.ACCESS_FINE_LOCATION}, 101);
-            }
-        } catch (Exception e){
-            e.printStackTrace();
-        }
+//        try {
+//            if (ContextCompat.checkSelfPermission(getApplicationContext(), android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED ) {
+//                ActivityCompat.requestPermissions(this, new String[]{android.Manifest.permission.ACCESS_FINE_LOCATION}, 101);
+//
+//            }
+//        } catch (Exception e){
+//            e.printStackTrace();
+//        }
 
 
 
@@ -121,6 +123,7 @@ public class BasePage extends AppCompatActivity {
         });
 
     }
+
 
     public void getLocation(){
         gpsTracker = new GpsTracker(BasePage.this);
